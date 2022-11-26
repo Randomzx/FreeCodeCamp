@@ -3,6 +3,10 @@ require('dotenv').config();
 
 let Person;
 
+const mongoose = require('mongoose');
+const mongo = process.env['MONGO_URI'];
+mongoose.connect(mongo);
+
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
@@ -51,16 +55,6 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
-/** # MONGOOSE SETUP #
-/*  ================== */
-
-/** 1) Install & Set up mongoose */
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-/** **Well Done !!**
-/* You completed these challenges, let's go celebrate !
- */
 
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
